@@ -44,15 +44,15 @@ import { InputNumberModule } from "primeng/inputnumber";
         </div>
 
         <p-button
-          (onClick)="onIncrease.emit()"
-          icon="pi pi-plus"
-          styleClass="p-button-success"
+          (onClick)="onDecrease.emit()"
+          icon="pi pi-minus"
+          styleClass="p-button-danger p-button-rounded"
         ></p-button>
 
         <p-button
-          (onClick)="onDecrease.emit()"
-          icon="pi pi-minus"
-          styleClass="p-button-danger"
+          (onClick)="onIncrease.emit()"
+          icon="pi pi-plus"
+          styleClass="p-button-success p-button-rounded"
         ></p-button>
       </div>
     </p-fieldset>
