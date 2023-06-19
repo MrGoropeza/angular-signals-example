@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { ButtonModule } from "primeng/button";
 import { FieldsetModule } from "primeng/fieldset";
 import { InputNumberModule } from "primeng/inputnumber";
+import { ButtonSeverityDirectiveDirective } from "../directives/button-severity.directive";
 
 @Component({
   selector: "app-counter",
@@ -16,14 +17,19 @@ import { InputNumberModule } from "primeng/inputnumber";
         align-items: center;
       }
 
-      .input-container {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
+      .button-container {
+        width: 3rem;
+        height: 3rem;
       }
     `,
   ],
-  imports: [ButtonModule, FieldsetModule, InputNumberModule, FormsModule],
+  imports: [
+    ButtonModule,
+    FieldsetModule,
+    InputNumberModule,
+    FormsModule,
+    ButtonSeverityDirectiveDirective,
+  ],
   template: `
     <p-fieldset [legend]="title" [toggleable]="true">
       <ng-content></ng-content>
@@ -38,22 +44,32 @@ import { InputNumberModule } from "primeng/inputnumber";
             pButton
             type="button"
             icon="pi pi-arrow-up"
-            class="p-button-info"
+            buttonSeverity="info"
             (click)="onSet.emit(inputValue); inputValue = 0"
           ></button>
         </div>
 
-        <p-button
-          (onClick)="onDecrease.emit()"
-          icon="pi pi-minus"
-          styleClass="p-button-danger p-button-rounded"
-        ></p-button>
+        <div class="button-container">
+          <button
+            pButton
+            type="button"
+            icon="pi pi-minus"
+            class="p-button-rounded"
+            buttonSeverity="danger"
+            (onClick)="onDecrease.emit()"
+          ></button>
+        </div>
 
-        <p-button
-          (onClick)="onIncrease.emit()"
-          icon="pi pi-plus"
-          styleClass="p-button-success p-button-rounded"
-        ></p-button>
+        <div class="button-container">
+          <button
+            pButton
+            type="button"
+            icon="pi pi-plus"
+            class="p-button-rounded"
+            buttonSeverity="success"
+            (onClick)="onIncrease.emit()"
+          ></button>
+        </div>
       </div>
     </p-fieldset>
   `,
