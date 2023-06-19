@@ -56,7 +56,7 @@ import { ButtonSeverityDirectiveDirective } from "../directives/button-severity.
             icon="pi pi-minus"
             class="p-button-rounded"
             buttonSeverity="danger"
-            (onClick)="onDecrease.emit()"
+            (click)="onDecrease.emit()"
           ></button>
         </div>
 
@@ -67,7 +67,7 @@ import { ButtonSeverityDirectiveDirective } from "../directives/button-severity.
             icon="pi pi-plus"
             class="p-button-rounded"
             buttonSeverity="success"
-            (onClick)="onIncrease.emit()"
+            (click)="onIncrease.emit()"
           ></button>
         </div>
       </div>
