@@ -29,17 +29,31 @@ import { InputNumberModule } from "primeng/inputnumber";
       <ng-content></ng-content>
 
       <div class="buttons-container">
-        <div class="input-container">
-          <p-inputNumber [(ngModel)]="inputValue"></p-inputNumber>
-          <p-button
-            (onClick)="onSet.emit(inputValue); inputValue = 0"
+        <div class="p-inputgroup">
+          <p-inputNumber
+            [(ngModel)]="inputValue"
+            styleClass="p-inputtext-sm"
+          ></p-inputNumber>
+          <button
+            pButton
+            type="button"
             icon="pi pi-arrow-up"
-            label="Setear"
-          ></p-button>
+            class="p-button-info"
+            (click)="onSet.emit(inputValue); inputValue = 0"
+          ></button>
         </div>
 
-        <p-button (onClick)="onIncrease.emit()" icon="pi pi-plus"></p-button>
-        <p-button (onClick)="onDecrease.emit()" icon="pi pi-minus"></p-button>
+        <p-button
+          (onClick)="onIncrease.emit()"
+          icon="pi pi-plus"
+          styleClass="p-button-success"
+        ></p-button>
+
+        <p-button
+          (onClick)="onDecrease.emit()"
+          icon="pi pi-minus"
+          styleClass="p-button-danger"
+        ></p-button>
       </div>
     </p-fieldset>
   `,
