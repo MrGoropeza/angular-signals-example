@@ -1,10 +1,12 @@
+import { CommonModule } from "@angular/common";
 import { Component, computed, signal } from "@angular/core";
 import { CounterComponent } from "../counter/counter.component";
+import { TripleCounterPipe } from "../pipes/triple-counter.pipe";
 
 @Component({
   selector: "app-signal-example",
   standalone: true,
-  imports: [CounterComponent],
+  imports: [CommonModule, CounterComponent, TripleCounterPipe],
   template: `
     <app-counter
       title="Con Signals"
@@ -14,6 +16,7 @@ import { CounterComponent } from "../counter/counter.component";
     >
       <h2>Cuenta: {{ counter() }}</h2>
       <h2>Cuenta doble: {{ doubleCounter() }}</h2>
+      <h2>Cuenta triple: {{ counter() | tripleCounter }}</h2>
     </app-counter>
   `,
 })

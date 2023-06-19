@@ -2,11 +2,12 @@ import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { BehaviorSubject, map } from "rxjs";
 import { CounterComponent } from "../counter/counter.component";
+import { TripleCounterPipe } from "../pipes/triple-counter.pipe";
 
 @Component({
   selector: "app-rxjs-example",
   standalone: true,
-  imports: [CommonModule, CounterComponent],
+  imports: [CommonModule, CounterComponent, TripleCounterPipe],
   template: `
     <app-counter
       title="Con RxJS"
@@ -16,6 +17,7 @@ import { CounterComponent } from "../counter/counter.component";
     >
       <h2>Cuenta: {{ counter$ | async }}</h2>
       <h2>Cuenta doble: {{ doubleCounter$ | async }}</h2>
+      <h2>Cuenta triple: {{ counter$ | async | tripleCounter }}</h2>
     </app-counter>
   `,
 })
