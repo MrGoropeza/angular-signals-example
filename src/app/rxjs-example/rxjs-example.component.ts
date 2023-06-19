@@ -12,6 +12,7 @@ import { CounterComponent } from "../counter/counter.component";
       title="Con RxJS"
       (onIncrease)="increase()"
       (onDecrease)="decrease()"
+      (onSet)="set($event)"
     >
       <h2>Cuenta: {{ counter$ | async }}</h2>
       <h2>Cuenta doble: {{ doubleCounter$ | async }}</h2>
@@ -21,6 +22,10 @@ import { CounterComponent } from "../counter/counter.component";
 export class RxjsExampleComponent {
   counter$ = new BehaviorSubject(0);
   doubleCounter$ = this.counter$.pipe(map((value) => value * 2));
+
+  set(value: number) {
+    this.counter$.next(value);
+  }
 
   increase() {
     this.counter$.next(this.counter$.value + 1);

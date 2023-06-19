@@ -10,6 +10,7 @@ import { CounterComponent } from "../counter/counter.component";
       title="Con Signals"
       (onIncrease)="increase()"
       (onDecrease)="decrease()"
+      (onSet)="set($event)"
     >
       <h2>Cuenta: {{ counter() }}</h2>
       <h2>Cuenta doble: {{ doubleCounter() }}</h2>
@@ -19,6 +20,10 @@ import { CounterComponent } from "../counter/counter.component";
 export class SignalExampleComponent {
   counter = signal(0);
   doubleCounter = computed(() => this.counter() * 2);
+
+  set(value: number) {
+    this.counter.set(value);
+  }
 
   increase() {
     this.counter.update((prev) => prev + 1);
