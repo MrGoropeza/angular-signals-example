@@ -20,10 +20,10 @@ import { SignalExampleComponent } from "./signal-example/signal-example.componen
     `,
   ],
   template: `
-    <main class="main-container">
+    <section class="main-container">
       <app-signal-example class="grow"></app-signal-example>
       <app-rxjs-example class="grow"></app-rxjs-example>
-    </main>
+    </section>
   `,
 })
 export class SignalsVsRxjsComponent {}
