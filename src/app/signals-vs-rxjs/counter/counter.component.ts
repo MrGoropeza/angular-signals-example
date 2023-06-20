@@ -39,13 +39,14 @@ import { ButtonSeverityDirectiveDirective } from "src/app/shared/directives/butt
           <p-inputNumber
             [(ngModel)]="inputValue"
             styleClass="p-inputtext-sm"
+            (onKeyDown)="onKeyDown($event)"
           ></p-inputNumber>
           <button
             pButton
             type="button"
             icon="pi pi-arrow-up"
             buttonSeverity="info"
-            (click)="onSet.emit(inputValue); inputValue = 0"
+            (click)="setValue()"
           ></button>
         </div>
 
@@ -81,4 +82,13 @@ export class CounterComponent {
   @Output() onSet = new EventEmitter<number>();
   @Output() onIncrease = new EventEmitter();
   @Output() onDecrease = new EventEmitter();
+
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === "Enter") this.setValue();
+  }
+
+  setValue() {
+    this.onSet.emit(this.inputValue);
+    this.inputValue = 0;
+  }
 }
