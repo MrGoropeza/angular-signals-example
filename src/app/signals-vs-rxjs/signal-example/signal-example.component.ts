@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, computed, signal } from "@angular/core";
+import { TripleCounterPipe } from "src/app/shared/pipes/triple-counter.pipe";
 import { CounterComponent } from "../counter/counter.component";
-import { TripleCounterPipe } from "../shared/pipes/triple-counter.pipe";
 
 @Component({
   selector: "app-signal-example",

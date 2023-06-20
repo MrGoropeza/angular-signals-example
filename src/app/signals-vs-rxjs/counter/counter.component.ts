@@ -3,7 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { ButtonModule } from "primeng/button";
 import { FieldsetModule } from "primeng/fieldset";
 import { InputNumberModule } from "primeng/inputnumber";
-import { ButtonSeverityDirectiveDirective } from "../shared/directives/button-severity.directive";
+import { ButtonSeverityDirectiveDirective } from "src/app/shared/directives/button-severity.directive";
 
 @Component({
   selector: "app-counter",

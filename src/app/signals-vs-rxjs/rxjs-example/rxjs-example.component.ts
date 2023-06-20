@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { BehaviorSubject, map } from "rxjs";
+import { TripleCounterPipe } from "src/app/shared/pipes/triple-counter.pipe";
 import { CounterComponent } from "../counter/counter.component";
-import { TripleCounterPipe } from "../shared/pipes/triple-counter.pipe";
 
 @Component({
   selector: "app-rxjs-example",

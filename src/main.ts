@@ -4,7 +4,19 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routes, provideRouter } from "@angular/router";
 import { AppComponent } from "./app/app.component";
 
-const APP_ROUTES: Routes = [];
+const APP_ROUTES: Routes = [
+  {
+    path: "",
+    loadComponent: () =>
+      import("./app/signals-vs-rxjs/signals-vs-rxjs.component").then(
+        (c) => c.SignalsVsRxjsComponent
+      ),
+  },
+  {
+    path: "**",
+    redirectTo: "",
+  },
+];
 
 const APP_PROVIDERS: ApplicationConfig = {
   providers: [
