@@ -1,3 +1,4 @@
+import { HttpClientModule } from "@angular/common/http";
 import { ApplicationConfig, importProvidersFrom } from "@angular/core";
 import { BrowserModule, bootstrapApplication } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -13,6 +14,13 @@ const APP_ROUTES: Routes = [
       ),
   },
   {
+    path: "rick&morty",
+    loadComponent: () =>
+      import("./app/rick-and-morty/feature/rick-and-morty.component").then(
+        (c) => c.RickAndMortyComponent
+      ),
+  },
+  {
     path: "**",
     redirectTo: "",
   },
@@ -21,7 +29,11 @@ const APP_ROUTES: Routes = [
 const APP_PROVIDERS: ApplicationConfig = {
   providers: [
     provideRouter(APP_ROUTES),
-    importProvidersFrom(BrowserAnimationsModule, BrowserModule),
+    importProvidersFrom(
+      BrowserAnimationsModule,
+      BrowserModule,
+      HttpClientModule
+    ),
   ],
 };
 

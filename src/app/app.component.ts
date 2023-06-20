@@ -26,7 +26,11 @@ export class AppComponent {
   menuItems: MenuItem[] = [
     {
       label: "Signals vs RxJS",
-      routerLink: "",
+      routerLink: [""],
+    },
+    {
+      label: "Rick & Morty",
+      routerLink: "rick&morty",
     },
   ];
 }
