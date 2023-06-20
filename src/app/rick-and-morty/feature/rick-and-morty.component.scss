@@ -1,0 +1,6 @@
+::ng-deep .p-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-content: center;
+  gap: 1rem;
+}
