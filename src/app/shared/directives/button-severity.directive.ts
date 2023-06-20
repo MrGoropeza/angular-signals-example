@@ -19,5 +19,5 @@ export class ButtonSeverityDirectiveDirective {
     this.el.nativeElement.classList.add(`p-button-${value}`);
   }
 
-  constructor(private el: ElementRef<HTMLElement>) {}
+  constructor(private el: ElementRef<HTMLButtonElement>) {}
 }
